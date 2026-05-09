@@ -1,0 +1,27 @@
+{
+  "name": "slow-reader",
+  "private": true,
+  "type": "module",
+  "module": "src/index.ts",
+  "scripts": {
+    "prepare": "git config core.hooksPath .githooks",
+    "dev": "bun run --hot src/index.ts",
+    "start": "bun run src/index.ts",
+    "test": "bun test",
+    "lint": "oxlint",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "elysia": "^1.4.28"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "oxfmt": "^0.48.0",
+    "oxlint": "^1.63.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

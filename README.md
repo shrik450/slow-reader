@@ -53,8 +53,8 @@ learn from them.
 
 ## Technical Details
 
-Slow reader is built on Bun with Elysia in TypeScript. It uses a single SQLite
-database. You should consider using litestream to back up the database, and
-setting up Jaeger for OpenTelemetry traces, but you aren't required to. See the
-"bare minimum" `docker-compose.yml`, and the "maximalist"
-`docker-compose-full.yml` for comparison.
+Slow reader is built on Bun with Elysia in TypeScript. It is fully server
+rendered. It uses a single SQLite database. You should consider using litestream
+to back up the database, and setting up Jaeger for OpenTelemetry traces, but you
+aren't required to. See the "bare minimum" `docker-compose.yml`, and the
+"maximalist" `docker-compose-full.yml` for comparison.
