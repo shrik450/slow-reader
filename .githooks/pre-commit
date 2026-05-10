@@ -3,3 +3,5 @@ set -euo pipefail
 
 bun run lint
 bun run format:check
+bun run typecheck
+bun run scripts/check-disable-comments.ts
