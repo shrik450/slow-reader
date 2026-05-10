@@ -5,4 +5,10 @@ services:
       - "3000:3000"
     environment:
       PORT: 3000
+      DATABASE_URL: /app/data/slow-reader.db
+    volumes:
+      - slow-reader-data:/app/data
     restart: unless-stopped
+
+volumes:
+  slow-reader-data:
