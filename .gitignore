@@ -38,3 +38,9 @@ data/
 *.db
 *.db-shm
 *.db-wal
+
+# Ignore per-user state under .claude/ but keep skills
+!.claude/
+.claude/*
+!.claude/skills/
+!.claude/skills/**

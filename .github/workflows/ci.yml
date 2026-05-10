@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: 1.3.13
@@ -18,3 +20,10 @@ jobs:
       - run: bun run format:check
       - run: bun run typecheck
       - run: bun test
+      - name: Check for forbidden disable comments
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            bun run scripts/check-disable-comments.ts "origin/${{ github.base_ref }}...HEAD"
+          else
+            bun run scripts/check-disable-comments.ts "HEAD^...HEAD"
+          fi
